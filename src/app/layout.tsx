@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
+import { YandexMetricsScript } from "@/lib/YandexMetrics";
 
 const geist = Geist({
   subsets: ["latin", "latin-ext"],
@@ -68,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className={geist.className} suppressHydrationWarning>
       <head>
+        <YandexMetricsScript />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://swagger-provider.com" />
         <title>Swagger Provider</title>
