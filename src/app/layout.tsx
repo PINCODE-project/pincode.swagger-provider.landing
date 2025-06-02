@@ -71,6 +71,7 @@ export default function RootLayout({
       <head>
         <YandexMetricsScript />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="yandex-verification" content="db4e5b7ba8cfc55b" />
         <link rel="canonical" href="https://swagger-provider.com" />
         <title>Swagger Provider</title>
       </head>
