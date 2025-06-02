@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
-  Code,
   Database,
   FileText,
   GitBranch,
@@ -13,7 +11,6 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FeatureCard } from "./feature-card";
 import { FeatureNotification } from "@/components/blocks/feature-notification";
 
 export default function FeaturesBento() {
@@ -171,42 +168,42 @@ export default function FeaturesBento() {
           <div className="grid h-[700px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
             {/* Блики на карточках */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-              <motion.div 
+              <motion.div
                 className="absolute h-40 w-40 rounded-full bg-purple-500/30 blur-3xl"
                 animate={{
-                  x: ['-50%', '150%'],
-                  y: ['30%', '40%', '25%'],
+                  x: ["-50%", "150%"],
+                  y: ["30%", "40%", "25%"],
                   scale: [1, 1.2, 0.9],
                 }}
                 transition={{
                   duration: 15,
                   repeat: Number.POSITIVE_INFINITY,
-                  repeatType: 'reverse',
+                  repeatType: "reverse",
                 }}
               />
-              <motion.div 
+              <motion.div
                 className="absolute h-40 w-40 rounded-full bg-blue-500/30 blur-3xl"
                 animate={{
-                  x: ['80%', '30%', '70%'],
-                  y: ['70%', '40%', '60%'],
+                  x: ["80%", "30%", "70%"],
+                  y: ["70%", "40%", "60%"],
                   scale: [1, 1.3, 0.8],
                 }}
                 transition={{
                   duration: 25,
                   repeat: Number.POSITIVE_INFINITY,
-                  repeatType: 'reverse',
+                  repeatType: "reverse",
                   delay: 2,
                 }}
               />
             </div>
-            
+
             {/* FeatureNotification */}
             <FeatureNotification />
             {/* Snippets Card - Large */}
-            <Card className="relative overflow-hidden border-gray-800/70 bg-gray-950/90 p-6 backdrop-blur-sm lg:col-span-3 shadow-lg shadow-purple-500/10">
+            <Card className="relative overflow-hidden border-gray-800/70 bg-gray-950/90 p-6 shadow-lg shadow-purple-500/10 backdrop-blur-sm lg:col-span-3">
               {/* Цветное световое пятно на карточке */}
               <div className="absolute inset-0 z-0 overflow-hidden">
-                <motion.div 
+                <motion.div
                   className="absolute right-0 top-0 h-60 w-60 rounded-full bg-purple-500/20 blur-3xl"
                   animate={{
                     scale: [1, 1.2, 0.9, 1],
@@ -218,8 +215,8 @@ export default function FeaturesBento() {
                     ease: "easeInOut",
                   }}
                 />
-                <motion.div 
-                  className="absolute left-10 bottom-10 h-60 w-60 rounded-full bg-blue-500/20 blur-3xl"
+                <motion.div
+                  className="absolute bottom-10 left-10 h-60 w-60 rounded-full bg-blue-500/20 blur-3xl"
                   animate={{
                     scale: [0.9, 1.1, 1, 0.9],
                     opacity: [0.1, 0.2, 0.1],
@@ -232,8 +229,8 @@ export default function FeaturesBento() {
                   }}
                 />
               </div>
-              
-              <div className="mb-4 flex items-center gap-2 relative z-10">
+
+              <div className="relative z-10 mb-4 flex items-center gap-2">
                 <Database className="h-6 w-6 text-purple-400" />
                 <h3 className="text-lg font-semibold text-white">
                   Сниппеты данных
@@ -246,17 +243,17 @@ export default function FeaturesBento() {
                 </Badge>
               </div>
 
-              <p className="mb-6 text-sm text-gray-400 relative z-10">
+              <p className="relative z-10 mb-6 text-sm text-gray-400">
                 Сохраняйте и переиспользуйте данные из запросов
               </p>
 
-              <div className="grid h-48 grid-cols-2 gap-4 relative z-10">
+              <div className="relative z-10 grid h-48 grid-cols-2 gap-4">
                 {/* JSON Input Field */}
-                <div className="rounded-lg border border-gray-700/70 bg-gray-900/90 p-4 shadow-md relative overflow-hidden">
+                <div className="relative overflow-hidden rounded-lg border border-gray-700/70 bg-gray-900/90 p-4 shadow-md">
                   {/* Световое пятно в JSON панели */}
                   <div className="absolute inset-0 z-0 overflow-hidden">
-                    <motion.div 
-                      className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-blue-500/20 blur-3xl"
+                    <motion.div
+                      className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-blue-500/20 blur-3xl"
                       animate={{
                         scale: [0.9, 1.1, 0.9],
                         opacity: [0.2, 0.3, 0.2],
@@ -268,9 +265,11 @@ export default function FeaturesBento() {
                       }}
                     />
                   </div>
-                  
-                  <div className="mb-2 text-xs text-gray-400 relative z-10">JSON Input</div>
-                  <div className="space-y-1 font-mono text-xs text-gray-300 relative z-10">
+
+                  <div className="relative z-10 mb-2 text-xs text-gray-400">
+                    JSON Input
+                  </div>
+                  <div className="relative z-10 space-y-1 font-mono text-xs text-gray-300">
                     <div>{"{"}</div>
                     <div className="pl-2">
                       <motion.div
@@ -299,10 +298,10 @@ export default function FeaturesBento() {
                 </div>
 
                 {/* Snippets Panel */}
-                <div className="rounded-lg border border-gray-700/70 bg-gray-900/90 p-4 shadow-md relative overflow-hidden">
+                <div className="relative overflow-hidden rounded-lg border border-gray-700/70 bg-gray-900/90 p-4 shadow-md">
                   {/* Световое пятно в панели сниппетов */}
                   <div className="absolute inset-0 z-0 overflow-hidden">
-                    <motion.div 
+                    <motion.div
                       className="absolute left-0 top-0 h-40 w-40 rounded-full bg-purple-500/20 blur-3xl"
                       animate={{
                         scale: [1, 1.2, 1],
@@ -315,11 +314,11 @@ export default function FeaturesBento() {
                       }}
                     />
                   </div>
-                  
-                  <div className="mb-2 text-xs text-gray-400 relative z-10">
+
+                  <div className="relative z-10 mb-2 text-xs text-gray-400">
                     User Data Snippet
                   </div>
-                  <div className="space-y-1 font-mono text-xs relative z-10">
+                  <div className="relative z-10 space-y-1 font-mono text-xs">
                     <div>{"{"}</div>
                     {Object.entries(snippetData).map(([key, value]) => (
                       <motion.div
@@ -354,10 +353,10 @@ export default function FeaturesBento() {
             </Card>
 
             {/* Collections Card - Large */}
-            <Card className="relative overflow-hidden border-gray-800/70 bg-gray-950/90 p-6 backdrop-blur-sm lg:col-span-3 shadow-lg shadow-green-500/10">
+            <Card className="relative overflow-hidden border-gray-800/70 bg-gray-950/90 p-6 shadow-lg shadow-green-500/10 backdrop-blur-sm lg:col-span-3">
               {/* Цветное световое пятно на карточке */}
               <div className="absolute inset-0 z-0 overflow-hidden">
-                <motion.div 
+                <motion.div
                   className="absolute left-0 top-0 h-60 w-60 rounded-full bg-green-500/20 blur-3xl"
                   animate={{
                     scale: [1.1, 0.9, 1.2, 1.1],
@@ -369,8 +368,8 @@ export default function FeaturesBento() {
                     ease: "easeInOut",
                   }}
                 />
-                <motion.div 
-                  className="absolute right-10 bottom-10 h-60 w-60 rounded-full bg-emerald-500/15 blur-3xl"
+                <motion.div
+                  className="absolute bottom-10 right-10 h-60 w-60 rounded-full bg-emerald-500/15 blur-3xl"
                   animate={{
                     scale: [0.8, 1, 0.9, 0.8],
                     opacity: [0.1, 0.2, 0.1],
@@ -383,8 +382,8 @@ export default function FeaturesBento() {
                   }}
                 />
               </div>
-              
-              <div className="mb-4 flex items-center gap-2 relative z-10">
+
+              <div className="relative z-10 mb-4 flex items-center gap-2">
                 <GitBranch className="h-6 w-6 text-green-400" />
                 <h3 className="text-lg font-semibold text-white">
                   Коллекции запросов
@@ -397,11 +396,11 @@ export default function FeaturesBento() {
                 </Badge>
               </div>
 
-              <p className="mb-6 text-sm text-gray-400 relative z-10">
+              <p className="relative z-10 mb-6 text-sm text-gray-400">
                 Визуальный редактор связанных API запросов
               </p>
 
-              <div className="relative h-48 overflow-hidden rounded-lg border border-gray-700/70 bg-gray-900/90 p-4 shadow-md z-10">
+              <div className="relative z-10 h-48 overflow-hidden rounded-lg border border-gray-700/70 bg-gray-900/90 p-4 shadow-md">
                 <div className="flex h-full items-start justify-between">
                   {nodes.map((node, index) => (
                     <div key={node.id} className="relative">
@@ -416,11 +415,11 @@ export default function FeaturesBento() {
                             transition={{ duration: 0.5 }}
                             style={{ transformOrigin: "left" }}
                           >
-                            <motion.div 
+                            <motion.div
                               className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-blue-500"
                               animate={{
                                 opacity: [0.3, 1, 0.3],
-                                scale: [0.8, 1.2, 0.8]
+                                scale: [0.8, 1.2, 0.8],
                               }}
                               transition={{
                                 duration: 2,
@@ -429,7 +428,7 @@ export default function FeaturesBento() {
                               }}
                             />
                           </motion.div>
-                          
+
                           {/* Анимированные частицы на линии */}
                           {activeNode > index && (
                             <motion.div
@@ -454,7 +453,7 @@ export default function FeaturesBento() {
                           activeNode >= index
                             ? "border-green-500/70 bg-green-500/20"
                             : "border-gray-600/70"
-                        } bg-gray-800/90 p-3 shadow-md relative overflow-hidden`}
+                        } relative overflow-hidden bg-gray-800/90 p-3 shadow-md`}
                         animate={{
                           scale: activeNode === index ? 1.05 : 1,
                           borderColor:
@@ -466,12 +465,12 @@ export default function FeaturesBento() {
                         {/* Световое пятно в ноде */}
                         {activeNode >= index && (
                           <div className="absolute inset-0 z-0 overflow-hidden">
-                            <motion.div 
+                            <motion.div
                               className={`absolute ${
-                                index === 0 
-                                  ? "right-0 bottom-0 h-40 w-40 bg-blue-500/30" 
-                                  : index === 1 
-                                    ? "left-0 top-0 h-40 w-40 bg-green-500/30" 
+                                index === 0
+                                  ? "bottom-0 right-0 h-40 w-40 bg-blue-500/30"
+                                  : index === 1
+                                    ? "left-0 top-0 h-40 w-40 bg-green-500/30"
                                     : "right-0 top-0 h-40 w-40 bg-yellow-500/30"
                               } rounded-full blur-2xl`}
                               animate={{
@@ -486,13 +485,13 @@ export default function FeaturesBento() {
                             />
                           </div>
                         )}
-                        
+
                         {/* Эффект свечения внутри ноды */}
                         {activeNode >= index && (
                           <motion.div
                             className="absolute inset-0 z-0 bg-gradient-to-r from-green-500/0 via-green-500/20 to-green-500/0"
                             animate={{
-                              x: ['-100%', '100%'],
+                              x: ["-100%", "100%"],
                             }}
                             transition={{
                               duration: 3,
@@ -501,26 +500,30 @@ export default function FeaturesBento() {
                             }}
                           />
                         )}
-                        
-                        <div className="mb-1 truncate text-xs font-medium text-white relative z-10">
+
+                        <div className="relative z-10 mb-1 truncate text-xs font-medium text-white">
                           {node.title}
                         </div>
 
                         {node.type === "request" && (
-                          <div className="mb-2 truncate rounded bg-gray-700/50 px-1.5 py-1 text-[10px] font-mono text-green-300 relative z-10">
+                          <div className="relative z-10 mb-2 truncate rounded bg-gray-700/50 px-1.5 py-1 font-mono text-[10px] text-green-300">
                             {node.url}
                           </div>
                         )}
 
                         {node.type === "data" && node.data && (
-                          <div className="mb-2 space-y-1 relative z-10">
-                            {Object.entries(node.data as Record<string, string | number>).map(([key, value]) => (
+                          <div className="relative z-10 mb-2 space-y-1">
+                            {Object.entries(
+                              node.data as Record<string, string | number>,
+                            ).map(([key, value]) => (
                               <div
                                 key={key}
                                 className="flex text-[10px] text-gray-300"
                               >
                                 <span className="text-blue-400">{key}:</span>
-                                <span className="ml-1 truncate">{String(value)}</span>
+                                <span className="ml-1 truncate">
+                                  {String(value)}
+                                </span>
                               </div>
                             ))}
                           </div>
@@ -528,8 +531,10 @@ export default function FeaturesBento() {
 
                         {/* Input parameters */}
                         {node.inputs && node.inputs.length > 0 && (
-                          <div className="mb-1 relative z-10">
-                            <div className="text-[9px] text-gray-400">Inputs:</div>
+                          <div className="relative z-10 mb-1">
+                            <div className="text-[9px] text-gray-400">
+                              Inputs:
+                            </div>
                             <div className="flex flex-wrap gap-1">
                               {node.inputs.map((input) => (
                                 <div
@@ -549,7 +554,9 @@ export default function FeaturesBento() {
                         {/* Output parameters */}
                         {node.outputs && node.outputs.length > 0 && (
                           <div className="relative z-10">
-                            <div className="text-[9px] text-gray-400">Outputs:</div>
+                            <div className="text-[9px] text-gray-400">
+                              Outputs:
+                            </div>
                             <div className="flex flex-wrap gap-1">
                               {node.outputs.map((output) => (
                                 <div
@@ -587,11 +594,11 @@ export default function FeaturesBento() {
             </Card>
 
             {/* Documentation Card */}
-            <Card className="relative overflow-hidden border-gray-800/70 bg-gray-950/90 p-6 backdrop-blur-sm lg:col-span-2 shadow-lg shadow-orange-500/10">
+            <Card className="relative overflow-hidden border-gray-800/70 bg-gray-950/90 p-6 shadow-lg shadow-orange-500/10 backdrop-blur-sm lg:col-span-2">
               {/* Цветное световое пятно на карточке */}
               <div className="absolute inset-0 z-0 overflow-hidden">
-                <motion.div 
-                  className="absolute right-0 bottom-0 h-60 w-60 rounded-full bg-orange-500/20 blur-3xl"
+                <motion.div
+                  className="absolute bottom-0 right-0 h-60 w-60 rounded-full bg-orange-500/20 blur-3xl"
                   animate={{
                     scale: [0.9, 1.1, 0.8, 0.9],
                     opacity: [0.2, 0.3, 0.1, 0.2],
@@ -602,7 +609,7 @@ export default function FeaturesBento() {
                     ease: "easeInOut",
                   }}
                 />
-                <motion.div 
+                <motion.div
                   className="absolute left-10 top-10 h-40 w-40 rounded-full bg-yellow-500/15 blur-3xl"
                   animate={{
                     scale: [1, 1.2, 0.9, 1],
@@ -616,22 +623,22 @@ export default function FeaturesBento() {
                   }}
                 />
               </div>
-              
-              <div className="mb-4 flex items-center gap-2 relative z-10">
+
+              <div className="relative z-10 mb-4 flex items-center gap-2">
                 <FileText className="h-6 w-6 text-orange-400" />
                 <h3 className="text-lg font-semibold text-white">
                   Документация
                 </h3>
               </div>
 
-              <p className="mb-4 text-sm text-gray-400 relative z-10">
+              <p className="relative z-10 mb-4 text-sm text-gray-400">
                 Интерактивная документация с встроенными REST блоками
               </p>
 
-              <div className="relative h-48 overflow-hidden rounded-lg border border-gray-700/70 bg-gray-900/90 p-4 shadow-md z-10">
+              <div className="relative z-10 h-48 overflow-hidden rounded-lg border border-gray-700/70 bg-gray-900/90 p-4 shadow-md">
                 {/* Цветное световое пятно в документации */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
-                  <motion.div 
+                  <motion.div
                     className="absolute right-5 top-5 h-40 w-40 rounded-full bg-orange-500/20 blur-3xl"
                     animate={{
                       scale: [0.8, 1, 0.8],
@@ -643,8 +650,8 @@ export default function FeaturesBento() {
                       ease: "easeInOut",
                     }}
                   />
-                  <motion.div 
-                    className="absolute left-10 bottom-5 h-32 w-32 rounded-full bg-green-500/20 blur-3xl"
+                  <motion.div
+                    className="absolute bottom-5 left-10 h-32 w-32 rounded-full bg-green-500/20 blur-3xl"
                     animate={{
                       scale: [1, 1.2, 1],
                       opacity: [0.1, 0.2, 0.1],
@@ -657,7 +664,7 @@ export default function FeaturesBento() {
                     }}
                   />
                 </div>
-                
+
                 {/* Animated cursors */}
                 {cursorPositions.map((pos) => (
                   <motion.div
@@ -679,7 +686,7 @@ export default function FeaturesBento() {
                 ))}
 
                 {/* Document content */}
-                <div className="space-y-3 text-xs relative z-10">
+                <div className="relative z-10 space-y-3 text-xs">
                   <motion.div
                     key={documentContent.title}
                     initial={{ opacity: 0 }}
@@ -707,20 +714,20 @@ export default function FeaturesBento() {
                     className="rounded border border-gray-600/50 bg-gray-800/80 p-2"
                   >
                     <div className="mb-1 flex items-center gap-2">
-                      <Badge 
-                        variant="outline" 
-                        className="px-1.5 py-0 h-5 bg-green-950/50 text-[10px] border-green-700/50 text-green-400 font-mono"
+                      <Badge
+                        variant="outline"
+                        className="h-5 border-green-700/50 bg-green-950/50 px-1.5 py-0 font-mono text-[10px] text-green-400"
                       >
                         GET
                       </Badge>
-                      <span className="font-mono text-green-400 text-[11px]">
+                      <span className="font-mono text-[11px] text-green-400">
                         {documentContent.endpoint}
                       </span>
                     </div>
                     <div className="text-xs text-gray-400">
                       {documentContent.endpointDesc}
                     </div>
-                    
+
                     {/* Пример кнопок документации */}
                     <div className="mt-2 flex items-center gap-2">
                       <motion.button

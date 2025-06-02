@@ -3,7 +3,6 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const geist = Geist({
   subsets: ["latin", "latin-ext"],
@@ -73,12 +72,10 @@ export default function RootLayout({
         <link rel="canonical" href="https://swagger-provider.com" />
         <title>Swagger Provider</title>
       </head>
-      <body className={cn("relative h-full font-sans antialiased dark")}>
-        {/*<ThemeProvider attribute="class" defaultTheme="dark">*/}
-          <main className="relative flex min-h-screen flex-col">
-            <div className="flex-1 flex-grow">{children}</div>
-          </main>
-        {/*</ThemeProvider>*/}
+      <body className={cn("dark relative h-full font-sans antialiased")}>
+        <main className="relative flex min-h-screen flex-col">
+          <div className="flex-1 flex-grow">{children}</div>
+        </main>
       </body>
     </html>
   );
